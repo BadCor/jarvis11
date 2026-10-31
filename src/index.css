@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: #050b14;
+    --panel-dark: #0b1726;
+    --panel-border: rgba(41, 216, 255, 0.2);
+    --hud-cyan: #29d8ff;
+    --hud-glow: rgba(41, 216, 255, 0.45);
+    --hud-blue: #0f3659;
+    --hud-amber: #f59e0b;
+    --hud-emerald: #10b981;
+    --text-primary: #eaf5ff;
+    --text-muted: #839bb5;
+  }
+
+  html, body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    overscroll-behavior-y: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .font-hud {
+    font-family: 'Chakra Petch', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* iOS Safe Areas */
+.pt-safe {
+  padding-top: max(12px, env(safe-area-inset-top));
+}
+
+.pb-safe {
+  padding-bottom: max(16px, env(safe-area-inset-bottom));
+}
+
+.pl-safe {
+  padding-left: max(8px, env(safe-area-inset-left));
+}
+
+.pr-safe {
+  padding-right: max(8px, env(safe-area-inset-right));
+}
+
+/* Cybernetic Grid & Glow Effects */
+.hud-grid-bg {
+  background-image: 
+    radial-gradient(circle at 50% 20%, rgba(14, 49, 78, 0.5) 0%, rgba(5, 11, 20, 0.95) 75%),
+    linear-gradient(rgba(41, 216, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(41, 216, 255, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+}
+
+.hud-panel {
+  background: rgba(11, 23, 38, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(41, 216, 255, 0.22);
+  box-shadow: 0 0 25px rgba(5, 18, 32, 0.8), inset 0 0 15px rgba(41, 216, 255, 0.04);
+}
+
+.hud-panel-active {
+  border-color: rgba(41, 216, 255, 0.6);
+  box-shadow: 0 0 30px rgba(41, 216, 255, 0.18), inset 0 0 20px rgba(41, 216, 255, 0.08);
+}
+
+.hud-glow-text {
+  text-shadow: 0 0 12px rgba(41, 216, 255, 0.65), 0 0 24px rgba(41, 216, 255, 0.35);
+}
+
+/* Custom Scrollbar for HUD logs */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(5, 11, 20, 0.8);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(41, 216, 255, 0.25);
+  border-radius: 2px;
+}

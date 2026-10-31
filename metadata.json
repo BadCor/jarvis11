@@ -1,0 +1,6 @@
+{
+  "name": "JARVIS Windows Cyber-HUD",
+  "description": "Кибернетический голосовой и жестовый пульт управления Windows с поддержкой запуска приложений, веб-сервисов, ИИ и интеграцией с локальным агентом.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
